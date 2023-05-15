@@ -1,38 +1,223 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  box-sizing: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+body{
+  background-color: rgb(30, 30, 30);
+  font-family: 'Poppins', sans-serif;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.container{
+  width: 80%;
+  margin: auto;
+  position: relative;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.budget-bar-wrapper{
+  width: 100%;
+  height: 87px;
+}
+
+.budget-bar{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: space-between;
+  align-items:center;
+}
+
+.button-wrapper-flex{
+  width:100% ;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+.btn{
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: none;
+  background-color: rgb(68, 68, 255);
+  border-radius: 5px;
+  color: white;
+  white-space: nowrap;
+  transition: 0.2s;
+}
+
+.btn:hover{
+  background-color: rgba(86, 176, 255, 0.499);
+  cursor: pointer;
+}
+
+.btn-clr-green{
+  background-color: rgb(0, 173, 6);
+}
+
+.btn-clr-red{
+  background-color: rgb(219, 29, 0);
+}
+
+.btn-no-color{
+  background:none;
+  border: 1px solid rgb(68, 68, 255);
+  color: rgb(68, 68, 255);
+}
+
+.btn-no-color:hover{
+  border: 1px solid rgb(68, 68, 255);
+  color: rgb(251, 251, 251);
+}
+
+.budget-card-list{
+  margin-top: 2rem;
+  display: grid;
+  grid-gap:2rem;
+  grid-template-columns: repeat(auto-fill, minmax(350px,1fr));
+}
+
+/* BUDGET CARD */
+.card{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 20px;
+  background-color: #b615ff54;
+  border-radius: 10px;
+  border: 4px solid black;
+}
+
+.card-header{
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-header h1{
+  font-size: 1.5rem;
+  font-weight: 200;
+}
+
+.budget-meter{
+  line-height: 35px;
+}
+
+.progress-bar{
+  width: 100%;
+}
+
+.bar-outer{
+  height: 16px;
+  background-color: rgba(0, 0, 0, 0.38);
+  border-radius: 50px;
+}
+
+.bar-inner{
+  height: 16px;
+  width: 30%;
+  border-radius: 50px;;
+  background-color: rgb(236, 236, 236);
+  transition: 0.5s;
+}
+
+.card-buttons{
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+/* BUDGET POPUP */
+
+.popup-box{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+  backdrop-filter: brightness(50%);
+}
+
+.popup{
+  width: 350px;
+  background-color: rgb(43, 43, 43);
+  padding: 10px;
+  border-radius: 10px;
+  /* border: 5px solid #6c83ffbf; */
+  z-index: 7;
+  box-shadow: -1px 10px 17px 1px rgba(0,0,0,0.9);
+}
+
+.popup-header{
+  display: flex;
+  justify-content: space-between;
+}
+
+.popup-form{
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+
+.input-wrapper{
+  display: flex;
+  flex-direction: column;
+}
+
+.input-wrapper > input{
+  font-size: 1.2rem;
+  padding: 5px 5px;
+}
+
+.btn-top-margin{
+  margin-top: 1.5rem;
+}
+
+.btn-cross{
+  color: white;
+  background: no-repeat;
+  border: none;
+  font-size: 1rem;
+  padding: 10px 5px;
+  height: 20px;
+  line-height: 1px;
+  cursor: pointer;
+}
+
+.btn-cross:hover{
+  background-color: rgba(255, 65, 65, 0.12);
+}
+
+.input-options{
+  font-size: 1rem;
+  padding: 5px 5px;
+}
+
+.list-item{
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 3px;
+  background-color: #ed71ff26;
+  margin: 10px 0px;
+  border-radius: 5px;
+}
+
+
+@media (max-width: 600px)  {
+
+  .container{
+    width: 95%;
+    margin: auto;
   }
-  to {
-    transform: rotate(360deg);
+
+  .budget-bar h1{
+    font-size: 1.7rem;
+  }
+
+  .popup{
+    width: 90%;
   }
 }
