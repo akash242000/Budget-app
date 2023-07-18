@@ -21,7 +21,7 @@ export function BudgetProvider({children}){
     
 
     function getBudgetExpenses(budgetId){
-        return expense.filter((expense)=>expense.budgetId===budgetId)
+        return expense.filter(expense=>expense.budgetId===budgetId)
     }
 
     function addBudget({name,max}){
@@ -40,8 +40,18 @@ export function BudgetProvider({children}){
     }
 
     function deleteBudget(id){
+        
+        setExpense((prevExpense)=>{
+            return prevExpense.filter((expense)=>{
+                if(prevExpense.budgetId!==id) return expense;
+                return{...expense, budgetId:UNCATEGORIZED_BUDGET}
+            })
+        })
+
+
         setBudget((prevBudget)=>{
-            return prevBudget.filter((element)=>element.budgetId!==id);
+            return prevBudget.filter((element)=>element.id!==id);
+            
         })
     }
 

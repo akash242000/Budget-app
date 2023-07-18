@@ -111,7 +111,9 @@ body{
   height: 16px;
   background-color: rgba(0, 0, 0, 0.38);
   border-radius: 50px;
+  overflow: clip;
 }
+
 
 .bar-inner{
   height: 16px;
@@ -203,6 +205,24 @@ body{
   background-color: #ed71ff26;
   margin: 10px 0px;
   border-radius: 5px;
+}
+
+.btn-delete-small{
+  display: block;
+  margin: auto;
+  padding: 5px 5px;
+  background-color: #e10202d6;
+  border: none;
+  border-radius: 8px;
+  color: #ffffffed;
+  font-weight: 600;
+}
+
+.btn-delete-small:hover{
+  background-color: #e10202fe;
+  color: #ffffff;
+  cursor: pointer;
+  transition: 0.2s;
 }
 
 

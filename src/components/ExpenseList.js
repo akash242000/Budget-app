@@ -4,9 +4,8 @@ import { currencyFormatter } from '../utils';
 
 export default function ExpenseList({name, budgetID, closePopup}) {
 
-    const {getBudgetExpenses, budget, deleteExpense} = useBudget();
+    const {getBudgetExpenses, budget, deleteExpense, deleteBudget} = useBudget();
 
-    console.log(budgetID);
     const expenses= getBudgetExpenses(budgetID);
     const currentBudget= 
     UNCATEGORIZED_BUDGET==budgetID
@@ -33,6 +32,12 @@ export default function ExpenseList({name, budgetID, closePopup}) {
                             </div>
                         </div>)
                     })}
+                </div>
+
+                <div className="delete-sec">
+                    <button className='btn-delete-small' onClick={()=>{
+                        deleteBudget(currentBudget.id) 
+                        closePopup()}}>Delete Budget</button>
                 </div>
             </div>    
     </div>  
